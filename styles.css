@@ -210,7 +210,27 @@ main {
   font-size: 0.85rem;
   letter-spacing: 0.06em;
   color: var(--brown);
+}
+
+.site-footer p {
+  margin: 0;
   opacity: 0.6;
+}
+
+.instagram-link {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--brown);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.instagram-link:hover {
+  color: var(--sage);
 }
 
 @media (max-width: 560px) {
