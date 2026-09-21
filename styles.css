@@ -173,6 +173,29 @@ main {
   text-align: right;
 }
 
+.melly-water {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 0.5rem auto 1.5rem;
+  transform-origin: 50% 73%;
+  animation: melly-water-bob 3.6s ease-in-out infinite;
+}
+
+@keyframes melly-water-bob {
+  0%, 100% { transform: translateY(2.3%) scaleX(1); }
+  25% { transform: translateY(-2.5%) scaleX(0.992); }
+  50% { transform: translateY(1.4%) scaleX(1.012); }
+  75% { transform: translateY(-1.8%) scaleX(0.996); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .melly-water {
+    animation: none;
+  }
+}
+
 .hero-wrap {
   position: relative;
   display: inline-block;
