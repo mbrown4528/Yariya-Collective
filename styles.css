@@ -173,6 +173,40 @@ main {
   text-align: right;
 }
 
+.hero-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.melly-mascot {
+  position: absolute;
+  bottom: -38px;
+  right: -120px;
+  width: 150px;
+  height: auto;
+  animation: melly-in 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+             melly-bob 3.6s ease-in-out 0.9s infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes melly-in {
+  0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes melly-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@media (max-width: 760px) {
+  .melly-mascot {
+    width: 100px;
+    right: -20px;
+    bottom: -28px;
+  }
+}
+
 .projects-panel {
   max-width: 780px;
 }
