@@ -180,8 +180,8 @@ main {
 
 .melly-mascot {
   position: absolute;
-  bottom: -50px;
-  right: -130px;
+  top: -50px;
+  left: -130px;
   width: 190px;
   height: auto;
   transform-origin: 53% 58%;
@@ -211,8 +211,8 @@ main {
 @media (max-width: 760px) {
   .melly-mascot {
     width: 120px;
-    right: -15px;
-    bottom: -30px;
+    left: -15px;
+    top: -30px;
   }
 }
 
