@@ -13,11 +13,11 @@ const SHELLS = [
 const SAND_CHANCE = 0.2;
 
 const SAND_NOTES = [
-  'Sand. Melly is keeping the good ones today.',
-  'Just sand. She looked right at you when she picked it, too.',
-  'Melly has decided you get sand. No further comment.',
-  'A generous handful of... sand. She seems pleased with herself.',
-  'Sand again. Melly insists this is fair.'
+  'She’s keeping the good ones today.',
+  'She looked right at you when she picked it, too.',
+  'She has no further comment.',
+  'A generous handful. She seems pleased with herself.',
+  'She insists this is fair.'
 ];
 
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
