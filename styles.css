@@ -303,6 +303,10 @@ main {
   }
 }
 
+.shell-panel {
+  max-width: 560px;
+}
+
 .contact-panel p {
   margin-bottom: 1.5rem;
 }
