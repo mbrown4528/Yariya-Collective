@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const shell = pick(SHELLS);
       prizeImage.src = shell.img;
       prizeImage.alt = shell.name;
-      prizeTitle.textContent = `You found ${article(shell.name)} ${shell.name}!`;
+      prizeTitle.textContent = `Melly found you ${article(shell.name)} ${shell.name}!`;
       prizeNote.textContent = shell.note;
     }
     backdrop.hidden = false;
