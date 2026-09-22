@@ -304,7 +304,15 @@ main {
 }
 
 .shell-panel {
-  max-width: 560px;
+  max-width: 600px;
+}
+
+.melly-shells {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 1.75rem auto 0;
 }
 
 .contact-panel p {
