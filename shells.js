@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isSand) {
       prizeImage.src = 'assets/shells/sand.png';
       prizeImage.alt = 'A small pile of sand';
-      prizeTitle.textContent = 'You got sand.';
+      prizeTitle.textContent = 'Melly found you… sand.';
       prizeNote.textContent = pick(SAND_NOTES);
     } else {
       const shell = pick(SHELLS);
