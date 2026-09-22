@@ -6,7 +6,7 @@
 <title>Snag a Shell &mdash; Yariya Collective</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 <header class="site-header">
@@ -24,13 +24,24 @@
 <main>
   <div class="page-panel shell-panel">
     <h1>Snag a Shell</h1>
-    <p>Melly&rsquo;s been collecting shells along the shore. Soon you&rsquo;ll be able to give her a tap and see which one she&rsquo;s found for you!</p>
-    <img class="melly-shells" src="assets/melly-shells.png" alt="Melly the seal lounging on a pile of seashells">
+    <p>Melly&rsquo;s been collecting shells along the shore. Give her a tap and see which one she&rsquo;s found for you!</p>
+    <button class="melly-button" type="button" aria-label="Tap Melly to get a shell">
+      <img class="melly-shells" src="assets/melly-shells.png" alt="Melly the seal lounging on a pile of seashells">
+    </button>
+  </div>
+
+  <div class="shell-backdrop" hidden></div>
+  <div class="shell-dialog" role="dialog" aria-modal="true" aria-labelledby="shell-prize-title" hidden>
+    <img class="shell-prize-img" src="" alt="">
+    <h2 class="shell-prize-title" id="shell-prize-title"></h2>
+    <p class="shell-prize-note"></p>
+    <button class="shell-dialog-close" type="button">Tap again</button>
   </div>
 </main>
 
 <footer class="site-footer">
   &copy; 2026 Yariya Collective
 </footer>
+<script src="shells.js?v=1"></script>
 </body>
 </html>
