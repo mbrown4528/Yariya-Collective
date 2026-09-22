@@ -1,13 +1,13 @@
 const SHELLS = [
-  { name: 'Scallop', img: 'assets/shells/scallop.png', note: 'A perfect fan, ridge for ridge.' },
-  { name: 'Sand Dollar', img: 'assets/shells/sand-dollar.png', note: 'Unbroken, which is the rare part.' },
-  { name: 'Cowrie', img: 'assets/shells/cowrie.png', note: 'Smooth as a river stone.' },
-  { name: 'Nautilus', img: 'assets/shells/nautilus.png', note: 'A spiral that keeps its own time.' },
-  { name: 'Super Extra Rare Mell Shell', img: 'assets/shells/moon-snail.png', note: 'Round, pearly, and a little bit lavender.' },
-  { name: 'Auger', img: 'assets/shells/auger.png', note: 'Long, delicate, and somehow still in one piece.' },
-  { name: 'Tulip Shell', img: 'assets/shells/tulip.png', note: 'Named for a flower, found in the surf.' },
-  { name: 'Clam', img: 'assets/shells/clam.png', note: 'Closed tight, keeping its secrets.' },
-  { name: 'Starfish', img: 'assets/shells/starfish.png', note: 'Not technically a shell. Melly does not care.' }
+  { name: 'Scallop', img: 'assets/shells/scallop.png', note: 'Scallops swim by clapping. This one has retired.' },
+  { name: 'Sand Dollar', img: 'assets/shells/sand-dollar.png', note: 'Completely intact. Do not ask about the others.' },
+  { name: 'Cowrie', img: 'assets/shells/cowrie.png', note: 'These were once used as real money. She is aware of this.' },
+  { name: 'Nautilus', img: 'assets/shells/nautilus.png', note: 'A flawless spiral. She will not explain how she found it so fast.' },
+  { name: 'Super Extra Rare Mell Shell', img: 'assets/shells/moon-snail.png', note: 'Named after herself. She insists this is standard practice.' },
+  { name: 'Auger', img: 'assets/shells/auger.png', note: 'Long, pointy, and somehow unbroken. She carried it very carefully.' },
+  { name: 'Tulip Shell', img: 'assets/shells/tulip.png', note: 'A flower that lives in the ocean and refuses to explain itself.' },
+  { name: 'Clam', img: 'assets/shells/clam.png', note: 'Sealed shut. Melly tried. Melly will not admit she tried.' },
+  { name: 'Starfish', img: 'assets/shells/starfish.png', note: 'Not technically a shell. She is not accepting feedback on this.' }
 ];
 
 const SAND_CHANCE = 0.2;
