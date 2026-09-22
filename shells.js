@@ -3,7 +3,7 @@ const SHELLS = [
   { name: 'Sand Dollar', img: 'assets/shells/sand-dollar.png', note: 'Unbroken, which is the rare part.' },
   { name: 'Cowrie', img: 'assets/shells/cowrie.png', note: 'Smooth as a river stone.' },
   { name: 'Nautilus', img: 'assets/shells/nautilus.png', note: 'A spiral that keeps its own time.' },
-  { name: 'Moon Snail', img: 'assets/shells/moon-snail.png', note: 'Round, pearly, and a little bit lavender.' },
+  { name: 'Super Extra Rare Mell Shell', img: 'assets/shells/moon-snail.png', note: 'Round, pearly, and a little bit lavender.' },
   { name: 'Auger', img: 'assets/shells/auger.png', note: 'Long, delicate, and somehow still in one piece.' },
   { name: 'Tulip Shell', img: 'assets/shells/tulip.png', note: 'Named for a flower, found in the surf.' },
   { name: 'Clam', img: 'assets/shells/clam.png', note: 'Closed tight, keeping its secrets.' },
