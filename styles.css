@@ -312,6 +312,18 @@ main {
   max-width: 600px;
 }
 
+.library-panel {
+  max-width: 560px;
+}
+
+.library-shelf {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  margin: 1.75rem auto 0;
+}
+
 .melly-button {
   display: block;
   margin: 1.75rem auto 0;
