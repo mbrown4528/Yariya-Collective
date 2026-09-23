@@ -23,7 +23,12 @@ const BOTTLE_NOTES = [
   'Melly would like it noted that she carried this bottle a very long way.',
   'Go outside at least once. The sky is doing something.',
   'Whatever washed up today, you can put it back tomorrow.',
-  'You found a bottle on the internet. That is a good sign about your day.'
+  'You found a bottle on the internet. That is a good sign about your day.',
+  'Message in a bottle: an extremely slow and unreliable way to text someone. Anyway, hello.',
+  'Melly wrote this one herself. It took all day. She would like that acknowledged.',
+  'A crab reviewed this note and gave it four stars. He declined to elaborate.',
+  'The seagulls have opinions about your life. Ignore them. They eat garbage.',
+  'This was written by a seal with no hands. Please adjust your expectations accordingly.'
 ];
 
 const BOTTLE_KEY = 'yariya-bottle';
