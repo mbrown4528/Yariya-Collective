@@ -60,7 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const progress = document.querySelector('.bag-progress');
   const complete = document.querySelector('.bag-complete');
   const resetLink = document.querySelector('.bag-reset');
+  const completeDialog = document.querySelector('.complete-dialog');
+  const completeClose = completeDialog.querySelector('.complete-close');
   let found = loadFound();
+  let justCompleted = false;
 
   const renderBag = () => {
     grid.textContent = '';
@@ -104,9 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
       prizeImage.alt = shell.name;
       prizeTitle.textContent = `Melly found you ${article(shell.name)} ${shell.name}!`;
       prizeNote.textContent = shell.note;
+      const wasComplete = found.size === SHELLS.length;
       found.add(shell.name);
       saveFound(found);
       renderBag();
+      if (!wasComplete && found.size === SHELLS.length) justCompleted = true;
     }
     backdrop.hidden = false;
     dialog.hidden = false;
@@ -115,8 +120,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const close = () => {
     dialog.hidden = true;
+    // The final shell hands off to the celebration instead of closing outright.
+    if (justCompleted) {
+      justCompleted = false;
+      completeDialog.hidden = false;
+      completeClose.focus();
+      return;
+    }
     backdrop.hidden = true;
     trigger.focus();
+  };
+
+  const closeComplete = () => {
+    completeDialog.hidden = true;
+    backdrop.hidden = true;
+    trigger.focus();
+  };
+
+  const dismiss = () => {
+    if (!completeDialog.hidden) closeComplete();
+    else if (!dialog.hidden) close();
   };
 
   resetLink.addEventListener('click', (event) => {
@@ -129,9 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   trigger.addEventListener('click', open);
   closeButton.addEventListener('click', close);
-  backdrop.addEventListener('click', close);
+  completeClose.addEventListener('click', closeComplete);
+  backdrop.addEventListener('click', dismiss);
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !dialog.hidden) close();
+    if (event.key === 'Escape') dismiss();
   });
 
   renderBag();

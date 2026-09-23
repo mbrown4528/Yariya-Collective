@@ -6,7 +6,7 @@
 <title>Snag a Shell &mdash; Yariya Collective</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=15">
+<link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 <header class="site-header">
@@ -47,11 +47,17 @@
     <p class="shell-prize-note"></p>
     <button class="shell-dialog-close" type="button">Tap again</button>
   </div>
+  <div class="shell-dialog complete-dialog" role="dialog" aria-modal="true" aria-labelledby="complete-title" hidden>
+    <img class="shell-prize-img" src="assets/melly-shells.png" alt="Melly the seal on her pile of shells">
+    <h2 class="shell-prize-title" id="complete-title">You found them all!</h2>
+    <p class="shell-prize-note">Every last treasure on the shore. Melly is out of shells, out of excuses, and quietly impressed.</p>
+    <button class="shell-dialog-close complete-close" type="button">Wonderful</button>
+  </div>
 </main>
 
 <footer class="site-footer">
   &copy; 2026 Yariya Collective
 </footer>
-<script src="shells.js?v=15"></script>
+<script src="shells.js?v=16"></script>
 </body>
 </html>
