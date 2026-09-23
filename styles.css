@@ -436,6 +436,16 @@ main {
   opacity: 0.8;
 }
 
+.welcome-note {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.welcome-note a {
+  color: var(--sage);
+  font-weight: 600;
+}
+
 .bottle-button {
   position: absolute;
   bottom: -46px;
