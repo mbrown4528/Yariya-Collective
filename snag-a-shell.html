@@ -6,7 +6,7 @@
 <title>Snag a Shell &mdash; Yariya Collective</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 <header class="site-header">
@@ -22,12 +22,22 @@
 </header>
 
 <main>
-  <div class="page-panel shell-panel">
-    <h1>Snag a Shell</h1>
-    <p>Melly&rsquo;s been collecting shells along the shore. Give her a tap and see which one she&rsquo;s found for you!</p>
-    <button class="melly-button" type="button" aria-label="Tap Melly to get a shell">
-      <img class="melly-shells" src="assets/melly-shells.png" alt="Melly the seal lounging on a pile of seashells">
-    </button>
+  <div class="shell-stack">
+    <div class="page-panel shell-panel">
+      <h1>Snag a Shell</h1>
+      <p>Melly&rsquo;s been collecting shells along the shore. Give her a tap and see which one she&rsquo;s found for you!</p>
+      <button class="melly-button" type="button" aria-label="Tap Melly to get a shell">
+        <img class="melly-shells" src="assets/melly-shells.png" alt="Melly the seal lounging on a pile of seashells">
+      </button>
+    </div>
+
+    <div class="page-panel bag-panel">
+      <h2 class="bag-heading">Your Beachcombing Bag</h2>
+      <p class="bag-progress"></p>
+      <div class="bag-grid"></div>
+      <p class="bag-complete" hidden>Melly has nothing left to give you. She seems a little relieved.</p>
+      <a class="bag-reset" href="#" hidden>empty my bag</a>
+    </div>
   </div>
 
   <div class="shell-backdrop" hidden></div>
@@ -42,6 +52,6 @@
 <footer class="site-footer">
   &copy; 2026 Yariya Collective
 </footer>
-<script src="shells.js?v=14"></script>
+<script src="shells.js?v=15"></script>
 </body>
 </html>

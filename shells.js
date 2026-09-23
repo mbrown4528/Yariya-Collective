@@ -20,9 +20,30 @@ const SAND_NOTES = [
   'She insists this is fair.'
 ];
 
+const STORAGE_KEY = 'yariya-bag';
+
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
 
 const article = (word) => ('aeiou'.includes(word[0].toLowerCase()) ? 'an' : 'a');
+
+// Browser storage can throw in private mode or with site data blocked, so the
+// bag always falls back to an empty (in-memory) collection rather than breaking.
+const loadFound = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch (error) {
+    return new Set();
+  }
+};
+
+const saveFound = (found) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...found]));
+  } catch (error) {
+    /* collection stays in memory for this visit only */
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const trigger = document.querySelector('.melly-button');
@@ -34,6 +55,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const prizeImage = dialog.querySelector('.shell-prize-img');
   const prizeTitle = dialog.querySelector('.shell-prize-title');
   const prizeNote = dialog.querySelector('.shell-prize-note');
+
+  const grid = document.querySelector('.bag-grid');
+  const progress = document.querySelector('.bag-progress');
+  const complete = document.querySelector('.bag-complete');
+  const resetLink = document.querySelector('.bag-reset');
+  let found = loadFound();
+
+  const renderBag = () => {
+    grid.textContent = '';
+    SHELLS.forEach((shell) => {
+      const isFound = found.has(shell.name);
+      const slot = document.createElement('div');
+      slot.className = isFound ? 'bag-slot' : 'bag-slot locked';
+
+      const image = document.createElement('img');
+      image.src = shell.img;
+      image.alt = '';
+      slot.appendChild(image);
+
+      const label = document.createElement('div');
+      label.className = 'bag-label';
+      label.textContent = isFound ? shell.name : '???';
+      slot.appendChild(label);
+
+      if (!isFound) slot.setAttribute('aria-label', 'Not found yet');
+      grid.appendChild(slot);
+    });
+
+    const total = SHELLS.length;
+    progress.textContent = found.size === total
+      ? `${total} of ${total} found — the whole shore!`
+      : `${found.size} of ${total} found`;
+    complete.hidden = found.size !== total;
+    resetLink.hidden = found.size === 0;
+  };
 
   const open = () => {
     const isSand = Math.random() < SAND_CHANCE;
@@ -48,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
       prizeImage.alt = shell.name;
       prizeTitle.textContent = `Melly found you ${article(shell.name)} ${shell.name}!`;
       prizeNote.textContent = shell.note;
+      found.add(shell.name);
+      saveFound(found);
+      renderBag();
     }
     backdrop.hidden = false;
     dialog.hidden = false;
@@ -60,10 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.focus();
   };
 
+  resetLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (!confirm('Empty your bag and start collecting again?')) return;
+    found = new Set();
+    saveFound(found);
+    renderBag();
+  });
+
   trigger.addEventListener('click', open);
   closeButton.addEventListener('click', close);
   backdrop.addEventListener('click', close);
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !dialog.hidden) close();
   });
+
+  renderBag();
 });
