@@ -245,7 +245,7 @@ main {
 }
 
 .projects-panel {
-  max-width: 780px;
+  max-width: 900px;
 }
 
 .projects-panel h1 {
@@ -254,7 +254,7 @@ main {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1.75rem;
   margin-top: 2rem;
 }
